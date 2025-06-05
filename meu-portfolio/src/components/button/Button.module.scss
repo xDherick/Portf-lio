@@ -1,0 +1,55 @@
+// src/components/Button/Button.module.scss
+$primary-button-bg: #e74c3c;     // Cor de destaque que usamos antes (ex: accent-color)
+$primary-button-text: white;
+$secondary-button-bg: #3498db; // Exemplo de cor secundária
+$secondary-button-text: white;
+
+.buttonBase {
+  display: inline-block;
+  padding: 0.7em 1.5em; // Ajuste o padding para um bom tamanho
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none; // Caso seja usado como link estilizado
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra sutil
+
+  &:hover {
+    transform: translateY(-2px); // Efeito de levantar
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &:disabled {
+    background-color: #bdc3c7; // Cinza para desabilitado
+    color: #7f8c8d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.primary {
+  background-color: $primary-button-bg;
+  color: $primary-button-text;
+
+  &:hover:not(:disabled) { // Só aplica hover se não estiver desabilitado
+    background-color: darken($primary-button-bg, 10%);
+  }
+}
+
+.secondary {
+  background-color: $secondary-button-bg;
+  color: $secondary-button-text;
+  border: 1px solid darken($secondary-button-bg, 5%); // Exemplo com borda
+
+  &:hover:not(:disabled) {
+    background-color: darken($secondary-button-bg, 10%);
+  }
+}

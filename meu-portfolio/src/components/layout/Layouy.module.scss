@@ -1,0 +1,79 @@
+// src/components/Layout/Layout.module.scss
+$primary-bg: #2c3e50; // Cor de fundo do header/footer
+$primary-text: #ecf0f1; // Cor do texto no header/footer
+$link-hover-color: #3498db; // Cor para links ativos ou hover
+$content-bg: #ffffff; // Cor de fundo do conteúdo principal
+
+.header {
+  background-color: $primary-bg;
+  color: $primary-text;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto; // Centralizar a barra de navegação
+}
+
+.navBrand .brandLink {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: $primary-text;
+  text-decoration: none;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: $primary-text;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 0.5rem 0; // Padding vertical para melhor área de clique
+  position: relative; // Para o pseudo-elemento ::after
+
+  &::after { // Efeito de sublinhado sutil no hover/active
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: $link-hover-color;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+    left: 0;
+  }
+
+  &.active {
+    color: $link-hover-color; // Cor do link ativo
+    font-weight: bold;
+  }
+}
+
+.mainContent {
+  background-color: $content-bg;
+  min-height: calc(100vh - 160px); // Ajustar conforme altura do header e footer
+  // O padding pode ser aplicado aqui ou nos componentes de página individuais
+}
+
+.footer {
+  background-color: $primary-bg;
+  color: $primary-text;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.9em;
+}

@@ -1,0 +1,91 @@
+// src/pages/Portfolio/Portfolio.module.scss
+
+/* Variáveis SCSS */
+$primary-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+// $accent-color: #e74c3c; // Não é mais usado diretamente aqui para botões
+$light-gray: #ecf0f1;
+$dark-gray: #7f8c8d;
+// $card-background: #ffffff; // Não é mais usado aqui
+$text-color: #333333;
+
+/* Mixin */
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+.portfolioContainer {
+  font-family: $primary-font;
+  background-color: $light-gray;
+  color: $text-color;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolioHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  h1 {
+    font-size: 3em;
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+  }
+  p {
+    font-size: 1.2em;
+    color: $dark-gray;
+  }
+}
+
+.projectsSection {
+  margin-bottom: 3rem;
+  h2 {
+    text-align: center;
+    font-size: 2.2em;
+    color: $secondary-color;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+}
+
+.projectGrid { // Mantém este para o layout dos cards
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem; // Aumentei um pouco o gap para mais respiro
+}
+
+.noProjects { // Estilo para quando não há projetos
+  text-align: center;
+  font-size: 1.2em;
+  color: $dark-gray;
+  padding: 2rem;
+}
+
+/* AS CLASSES .projectCard, .projectTitle, .projectDescription, .projectLink FORAM REMOVIDAS DAQUI */
+
+.portfolioFooter {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid darken($light-gray, 10%);
+  color: $dark-gray;
+  font-size: 0.9em;
+  margin-top: auto;
+}
+
+@include mobile {
+  .portfolioContainer {
+    padding: 1.5rem;
+  }
+  .portfolioHeader h1 {
+    font-size: 2.5em;
+  }
+  .projectGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

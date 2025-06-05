@@ -1,0 +1,74 @@
+// src/components/ProjectCard/ProjectCard.module.scss
+$card-background: #ffffff;
+$card-border-color: #e0e0e0;
+$title-color: #2c3e50; // Mesma $primary-color do Portfolio
+$description-color: #555; // Um cinza mais escuro para texto
+// $tag-bg: #ecf0f1;
+// $tag-text: #7f8c8d;
+
+.projectCard {
+  background-color: $card-background;
+  border-radius: 10px; // Bordas um pouco mais arredondadas
+  border: 1px solid $card-border-color;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); // Sombra mais suave
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column; // Importante para o flex-grow da descrição
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; // Para que todos os cards em um grid tenham a mesma altura, se necessário
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// .projectImage {
+//   width: 100%;
+//   height: 200px;
+//   object-fit: cover;
+//   border-radius: 6px 6px 0 0;
+//   margin: -1.8rem -1.8rem 1.5rem -1.8rem; // Fazer a imagem tocar as bordas superiores
+// }
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; // Faz este container crescer, empurrando cardActions para baixo
+}
+
+.projectTitle {
+  font-size: 1.6em;
+  color: $title-color;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  font-weight: 600; // Título um pouco mais forte
+}
+
+.projectDescription {
+  font-size: 1em;
+  line-height: 1.7; // Melhor legibilidade
+  color: $description-color;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; // Faz a descrição ocupar o espaço disponível
+}
+
+// .tagsContainer {
+//   margin-bottom: 1.5rem;
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 0.5rem;
+// }
+
+// .tag {
+//   background-color: $tag-bg;
+//   color: $tag-text;
+//   padding: 0.3em 0.7em;
+//   border-radius: 4px;
+//   font-size: 0.85em;
+// }
+
+.cardActions {
+  margin-top: auto; // Garante que esta div (e o botão dentro) fique no final do card
+  align-self: flex-start; // Alinha o botão à esquerda do cardActions
+}
