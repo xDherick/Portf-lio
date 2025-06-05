@@ -2,48 +2,147 @@
 
 /* Variáveis SCSS */
 $primary-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$primary-color: #2c3e50;
-$secondary-color: #3498db;
-// $accent-color: #e74c3c; // Não é mais usado diretamente aqui para botões
-$light-gray: #ecf0f1;
-$dark-gray: #7f8c8d;
-// $card-background: #ffffff; // Não é mais usado aqui
-$text-color: #333333;
+$primary-color: #2c3e50; // Um azul escuro
+$secondary-color: #3498db; // Um azul mais claro
+$accent-color: #e74c3c; // Um vermelho/laranja para destaque (usado nos botões de exemplo)
+$light-gray: #ecf0f1; // Fundo principal da página
+$card-background: #ffffff; // Fundo dos cards e da seção de perfil
+$dark-gray: #7f8c8d; // Para texto secundário, bordas
+$text-color: #333333; // Cor principal do texto
 
-/* Mixin */
+/* Mixin para responsividade */
 @mixin mobile {
   @media (max-width: 768px) {
     @content;
   }
 }
 
+/* Estilos Globais para o Container do Portfólio */
 .portfolioContainer {
   font-family: $primary-font;
   background-color: $light-gray;
   color: $text-color;
   padding: 2rem;
+
+  /* Ajustes para altura total da página e posicionamento do footer */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Cabeçalho Principal do Portfólio */
 .portfolioHeader {
   text-align: center;
   margin-bottom: 3rem;
+
   h1 {
     font-size: 3em;
     color: $primary-color;
     margin-bottom: 0.5rem;
     font-weight: 300;
   }
+
   p {
     font-size: 1.2em;
     color: $dark-gray;
   }
 }
 
-.projectsSection {
+/* Seção de Perfil */
+.profileSection {
+  display: flex;
+  align-items: center;
+  background-color: $card-background;
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
   margin-bottom: 3rem;
+  gap: 2rem;
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+}
+
+.profileImageContainer {
+  flex-shrink: 0;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid $light-gray;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.profileInfo {
+  flex-grow: 1;
+}
+
+.profileName {
+  font-size: 2.2em;
+  color: $primary-color;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.profileDescription {
+  font-size: 1.1em;
+  color: $dark-gray;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.profileLinks {
+  display: flex;
+  gap: 1rem;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+
+  &.linkedinLink {
+    background-color: #0077b5;
+    color: white;
+    &:hover {
+      background-color: darken(#0077b5, 10%);
+      transform: translateY(-2px);
+    }
+  }
+
+  &.githubLink {
+    background-color: #333;
+    color: white;
+    &:hover {
+      background-color: lighten(#333, 10%);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Seção de Projetos */
+.projectsSection {
+  margin-bottom: 3rem; // Espaço antes do rodapé ou da próxima seção
+
+  // Se precisar que esta seção cresça para ocupar espaço:
+  // flex-grow: 1; (Isso faria a seção de projetos tentar ocupar o espaço restante
+  // antes do rodapé, útil se não houver muitas outras seções depois dela)
+
   h2 {
     text-align: center;
     font-size: 2.2em;
@@ -53,39 +152,47 @@ $text-color: #333333;
   }
 }
 
-.projectGrid { // Mantém este para o layout dos cards
+/* Grid de Projetos (onde os ProjectCards são renderizados) */
+.projectGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem; // Aumentei um pouco o gap para mais respiro
+  gap: 2.5rem;
 }
 
-.noProjects { // Estilo para quando não há projetos
+/* Mensagem para quando não há projetos */
+.noProjects {
   text-align: center;
   font-size: 1.2em;
   color: $dark-gray;
   padding: 2rem;
 }
 
-/* AS CLASSES .projectCard, .projectTitle, .projectDescription, .projectLink FORAM REMOVIDAS DAQUI */
-
+/* Rodapé */
 .portfolioFooter {
   text-align: center;
   padding-top: 2rem;
   border-top: 1px solid darken($light-gray, 10%);
   color: $dark-gray;
   font-size: 0.9em;
-  margin-top: auto;
+  margin-top: auto; // Empurra o rodapé para o final do .portfolioContainer
 }
 
+/* Estilos Responsivos Globais para a Página */
 @include mobile {
   .portfolioContainer {
-    padding: 1.5rem;
+    padding: 1.5rem; // Reduz o padding geral em telas menores
   }
+
   .portfolioHeader h1 {
-    font-size: 2.5em;
+    font-size: 2.5em; // Reduz o tamanho da fonte do título principal
   }
-  .projectGrid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+
+  // O .projectGrid já é ajustado dentro da sua própria definição de @include mobile se necessário,
+  // mas podemos ter um ajuste global aqui se o mixin não for usado lá.
+  // Como já temos:
+  // .projectGrid {
+  //   grid-template-columns: 1fr; // Isso já está no @include mobile do .projectGrid
+  // }
+  // não precisamos repetir a menos que queiramos sobrescrever de forma diferente.
+  // As regras de responsividade para .profileSection já estão aninhadas nela.
 }
