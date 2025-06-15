@@ -1,35 +1,38 @@
-// src/pages/Portfolio/Portfolio.tsx
-import React from 'react';
-import styles from './Portfolio.module.scss';
-import ProjectCard from '../components/ProjectCard/ProjectCard';
-import profileImageFromFile from '../assets/foto/foto.svg';
+import React from "react";
+import styles from "./Portfolio.module.scss";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
+import profileImageFromFile from "../assets/foto/foto.svg";
 
-// Dados dos projetos (mantidos como antes)
 const projectsData = [
   {
-    id: 'proj1',
-    title: 'Reserva de Salas UniEvangélica',
-    description: 'Esse foi o meu primeiro projeto de front-end, desenvolvido para a Universidade Evangélica de Goiás. A aplicação permite que os professores reservem salas de aula e laboratórios, facilitando o gerenciamento de espaços acadêmicos.',
-    linkUrl: 'https://github.com/xdherick/reserva-de-salas',
+    id: "proj1",
+    title: "Reserva de Salas UniEvangélica",
+    description:
+      "Esse foi o meu primeiro projeto de front-end, desenvolvido para a Universidade Evangélica de Goiás. A aplicação permite que os professores reservem salas de aula e laboratórios, facilitando o gerenciamento de espaços acadêmicos.",
+    linkUrl: "https://github.com/xdherick/reserva-de-salas",
   },
   {
-    id: 'proj2',
-    title: 'Aplicativo Stellar',
-    description: 'Plataforma móvel para gerenciamento de tarefas e colaboração em equipe, focada na simplicidade e eficiência.',
-    linkUrl: 'https://github.com',
+    id: "proj2",
+    title: "Controle de Estágios de alunos da UnieVangélica",
+    description:
+      "Automatização do processo de controle de estágios dos alunos da Universidade Evangélica de Goiás. A aplicação permite que os alunos registrem seus estágios, facilitando o acompanhamento e a validação por parte dos professores.",
+    linkUrl: "https://github.com/VitorMelo1/UniState",
   },
   {
-    id: 'proj3',
-    title: 'Ferramenta Galaxy',
-    description: 'Solução de análise de dados em larga escala para o setor financeiro, otimizando processos e identificando novas oportunidades de mercado.',
-    linkUrl: 'https://github.com',
+    id: "proj3",
+    title: "Lista de Tarefas (To-Do List)",
+    description:
+      "Um projeto fullstack simples de uma Lista de Tarefas (To-Do List) construído para fins de aprendizado, cobrindo todas as etapas de desenvolvimento, do banco de dados à interface do usuário.",
+    linkUrl: "https://github.com/xDherick/list-fullstack",
   },
 ];
 
 const Portfolio: React.FC = () => {
   const seuNome = "Dherick Bruçó Rodrigues";
-  const suaDescricaoCurta = "Estudante de Engenharia de Software na UniEvangélica, apaixonado por tecnologia e desenvolvimento web.";
-  const linkedinUrl = "https://www.linkedin.com/in/dherick-rodrigues-282515322/";
+  const suaDescricaoCurta =
+    "Estudante de Engenharia de Software na UniEvangélica, apaixonado por tecnologia e desenvolvimento web.";
+  const linkedinUrl =
+    "https://www.linkedin.com/in/dherick-rodrigues-282515322/";
   const githubUrl = "https://github.com/xdherick";
 
   // 2. Use a variável importada para o src da imagem
@@ -39,7 +42,7 @@ const Portfolio: React.FC = () => {
   return (
     <div className={styles.portfolioContainer}>
       <header className={styles.portfolioHeader}>
-        <h1>Meu Portfólio Incrível</h1>
+        <h1>Portfólio do Dherick</h1>
         <p>Bem-vindo(a) aos meus projetos e experiências!</p>
       </header>
 
@@ -89,12 +92,17 @@ const Portfolio: React.FC = () => {
             ))}
           </div>
         ) : (
-          <p className={styles.noProjects}>Ainda não há projetos para exibir. Volte em breve!</p>
+          <p className={styles.noProjects}>
+            Ainda não há projetos para exibir. Volte em breve!
+          </p>
         )}
       </section>
 
       <footer className={styles.portfolioFooter}>
-        <p>&copy; {new Date().getFullYear()} {seuNome}. Todos os direitos reservados.</p>
+        <p>
+          &copy; {new Date().getFullYear()} {seuNome}. Todos os direitos
+          reservados.
+        </p>
       </footer>
     </div>
   );
