@@ -13,9 +13,9 @@ const projectsData = [
   },
   {
     id: "proj2",
-    title: "Controle de Estágios de alunos da UnieVangélica",
+    title: "UniStage - Controle de Estágios de alunos da UnieVangélica",
     description:
-      "Automatização do processo de controle de estágios dos alunos da Universidade Evangélica de Goiás. A aplicação permite que os alunos registrem seus estágios, facilitando o acompanhamento e a validação por parte dos professores.",
+      "Automatização do processo de controle de estágios dos alunos da Universidade Evangélica de Goiás. A aplicação permite que os alunos registrem seus estágios, facilitando o acompanhamento e a validação por parte da reitoria e empresas.",
     linkUrl: "https://github.com/VitorMelo1/UniState",
   },
   {
@@ -34,10 +34,7 @@ const Portfolio: React.FC = () => {
   const linkedinUrl =
     "https://www.linkedin.com/in/dherick-rodrigues-282515322/";
   const githubUrl = "https://github.com/xdherick";
-
-  // 2. Use a variável importada para o src da imagem
-  // A linha antiga era: const profileImageSrc = "/profile-pic.jpg";
-  const profileImageSrc = profileImageFromFile; // <<<<<<< ALTERADO: Usando o SVG importado
+  const profileImageSrc = profileImageFromFile;
 
   return (
     <div className={styles.portfolioContainer}>
@@ -49,7 +46,7 @@ const Portfolio: React.FC = () => {
       <section className={styles.profileSection}>
         <div className={styles.profileImageContainer}>
           <img
-            src={profileImageSrc} // <<<<<<< ALTERADO: Agora usa a variável do SVG importado
+            src={profileImageSrc}
             alt={`Foto de perfil de ${seuNome}`}
             className={styles.profileImage}
           />

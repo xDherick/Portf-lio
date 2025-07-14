@@ -1,16 +1,13 @@
-// src/pages/Portfolio/Portfolio.module.scss
+/* Variáveis */
+$primary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$accent-color: #e74c3c;
+$light-gray: #ecf0f1;
+$card-background: #ffffff;
+$dark-gray: #7f8c8d;
+$text-color: #333333;
 
-/* Variáveis SCSS */
-$primary-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$primary-color: #2c3e50; // Um azul escuro
-$secondary-color: #3498db; // Um azul mais claro
-$accent-color: #e74c3c; // Um vermelho/laranja para destaque (usado nos botões de exemplo)
-$light-gray: #ecf0f1; // Fundo principal da página
-$card-background: #ffffff; // Fundo dos cards e da seção de perfil
-$dark-gray: #7f8c8d; // Para texto secundário, bordas
-$text-color: #333333; // Cor principal do texto
-
-/* Mixin para responsividade */
 @mixin mobile {
   @media (max-width: 768px) {
     @content;
@@ -23,8 +20,6 @@ $text-color: #333333; // Cor principal do texto
   background-color: $light-gray;
   color: $text-color;
   padding: 2rem;
-
-  /* Ajustes para altura total da página e posicionamento do footer */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -76,7 +71,7 @@ $text-color: #333333; // Cor principal do texto
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid $light-gray;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .profileInfo {
@@ -137,12 +132,7 @@ $text-color: #333333; // Cor principal do texto
 
 /* Seção de Projetos */
 .projectsSection {
-  margin-bottom: 3rem; // Espaço antes do rodapé ou da próxima seção
-
-  // Se precisar que esta seção cresça para ocupar espaço:
-  // flex-grow: 1; (Isso faria a seção de projetos tentar ocupar o espaço restante
-  // antes do rodapé, útil se não houver muitas outras seções depois dela)
-
+  margin-bottom: 3rem;
   h2 {
     text-align: center;
     font-size: 2.2em;
@@ -152,14 +142,13 @@ $text-color: #333333; // Cor principal do texto
   }
 }
 
-/* Grid de Projetos (onde os ProjectCards são renderizados) */
+/* Grid de Projetos */
 .projectGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
 }
 
-/* Mensagem para quando não há projetos */
 .noProjects {
   text-align: center;
   font-size: 1.2em;
@@ -174,25 +163,16 @@ $text-color: #333333; // Cor principal do texto
   border-top: 1px solid darken($light-gray, 10%);
   color: $dark-gray;
   font-size: 0.9em;
-  margin-top: auto; // Empurra o rodapé para o final do .portfolioContainer
+  margin-top: auto;
 }
 
 /* Estilos Responsivos Globais para a Página */
 @include mobile {
   .portfolioContainer {
-    padding: 1.5rem; // Reduz o padding geral em telas menores
+    padding: 1.5rem;
   }
 
   .portfolioHeader h1 {
-    font-size: 2.5em; // Reduz o tamanho da fonte do título principal
+    font-size: 2.5em;
   }
-
-  // O .projectGrid já é ajustado dentro da sua própria definição de @include mobile se necessário,
-  // mas podemos ter um ajuste global aqui se o mixin não for usado lá.
-  // Como já temos:
-  // .projectGrid {
-  //   grid-template-columns: 1fr; // Isso já está no @include mobile do .projectGrid
-  // }
-  // não precisamos repetir a menos que queiramos sobrescrever de forma diferente.
-  // As regras de responsividade para .profileSection já estão aninhadas nela.
 }
