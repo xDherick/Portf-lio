@@ -1,8 +1,7 @@
 Meu Portfólio
 Um portfólio pessoal para mostrar meus projetos, habilidades e experiência como desenvolvedor.
 
-🚀 Sobre mim
-Olá! Sou o Dherick, um desenvolvedor apaixonado por criar soluções inovadoras e eficientes. Este portfólio é um espaço onde demonstro os projetos em que trabalhei.
+🚀 Olá! Sou o Dherick, um desenvolvedor apaixonado por criar soluções inovadoras e eficientes. Este portfólio é um espaço onde demonstro os projetos em que trabalhei.
 
 🛠️ Tecnologias Utilizadas
 React/Typescript/SCSS.
