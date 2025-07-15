@@ -24,15 +24,16 @@ Informações para que possam entrar em contato comigo.
 ⚙️ Instalação e Uso
 Para visualizar o portfólio localmente, siga estes passos:
 
-**Clone o repositório:** 
-    ```bash
+**1- Clone o repositório:** 
+```bash
     git clone https://github.com/xDherick/Portf-lio
-    ```
-**Navegue até a pasta do projeto:** 
-    ```bash
+```
+**2- Navegue até a pasta do projeto:**
+```bash
     cd meu-portfolio
-    ```
-Abra o arquivo index.html no seu navegador.
+```
+
+**3- Abra o arquivo index.html no seu navegador.**
 
 📫 Contato
 LinkedIn: https://www.linkedin.com/in/dherick-rodrigues-282515322/
