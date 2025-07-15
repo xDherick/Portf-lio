@@ -5,7 +5,8 @@ Um portfólio pessoal para mostrar meus projetos, habilidades e experiência com
 Olá! Sou o Dherick, um desenvolvedor apaixonado por criar soluções inovadoras e eficientes. Este portfólio é um espaço onde demonstro os projetos em que trabalhei.
 
 🛠️ Tecnologias Utilizadas
-HTML/CSS/Javascript.
+React/Typescript/SCSS.
+Node/Express.
 
 Ferramentas:
 Git & GitHub
@@ -24,15 +25,13 @@ Informações para que possam entrar em contato comigo.
 Para visualizar o portfólio localmente, siga estes passos:
 
 Clone o repositório:
-
-Bash
-
-git clone https://github.com/xDherick/Portf-lio.git
-Navegue até o diretório do projeto:
-
-Bash
-
-cd Portf-lio
+    ```bash
+    git clone https://github.com/xDherick/Portf-lio
+    ```
+Navegue até a pasta do projeto:
+    ```bash
+    cd meu-portfolio
+    ```
 Abra o arquivo index.html no seu navegador.
 
 📫 Contato
